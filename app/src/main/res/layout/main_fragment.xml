@@ -1,20 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
+    <!-- The search and dropdown box -->
+    <AutoCompleteTextView
+        android:id="@+id/autocomplete_textview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/autocomplete_background"
+        android:hint="@string/autocomplete_hint"
+        android:labelFor="@string/autocomplete_label"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--
+    Current and history button area
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:orientation="horizontal">
+
+        <!-- Current button -->
+        <TextView
+            android:id="@+id/current_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/current_stats" />
+
+        <!-- History button -->
+
+        <TextView
+            android:id="@+id/history_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/historic_stats" />
+
+    </LinearLayout>
+
+    <!--
+    Main Results Area
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Population block -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/statsBackground"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/population"
+                android:textStyle="bold" />
+
+            <!-- Will provide population numbers -->
+
+            <TextView
+                android:id="@+id/population"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/pop_data" />
+
+        </LinearLayout>
+
+        <!-- Cases block -->
+
+        <include layout="@layout/cases_layout" />
+
+        <!-- Deaths block -->
+
+        <include layout="@layout/deaths_layout" />
+
+        <!-- Tests block -->
+
+        <include layout="@layout/tests_layout" />
+
+    </LinearLayout>
+
+</LinearLayout>

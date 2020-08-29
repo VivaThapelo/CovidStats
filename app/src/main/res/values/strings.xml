@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Covid Stats</string>
+    <string name="autocomplete_label">Select a country</string>
+    <string name="pop_data">No Data</string>
+    <string name="current_stats">Current</string>
+    <string name="historic_stats">Historic</string>
+    <string name="population">Population</string>
+    <string name="cases">Cases</string>
+    <string name="deaths">Deaths</string>
+    <string name="tests">Tests</string>
+    <string name="new_cases">New</string>
+    <string name="active_cases">Active</string>
+    <string name="critical_cases">Critical</string>
+    <string name="recovered_cases">Recovered</string>
+    <string name="total_cases">Total</string>
+    <string name="autocomplete_hint">Select a country</string>
 </resources>

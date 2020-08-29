@@ -3,4 +3,6 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="statsBackground">#E0E3E2</color>
+    <color name="autocomplete_border_color">#7E8388</color>
 </resources>

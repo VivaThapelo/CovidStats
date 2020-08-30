@@ -49,6 +49,9 @@ class MainFragment : Fragment() {
         val autocompleteView =
             rootView.findViewById(R.id.autocomplete_textview) as CustomAutoCompleteTextView
         autocompleteView.setAdapter(adapter)
+        viewModel.countries.observe(viewLifecycleOwner) {
+            adapter.notifyDataSetChanged()
+        }
 
         return rootView
     }
@@ -57,7 +60,6 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
-
     }
 
 }

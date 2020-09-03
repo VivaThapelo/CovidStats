@@ -1,12 +1,12 @@
 package com.thapelo.covidstats.webservices
 
 import androidx.lifecycle.LiveData
-import com.thapelo.covidstats.models.Country
+import com.thapelo.covidstats.models.Statistics
 import com.thapelo.covidstats.repositories.ApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 
-interface CovidWebservices {
+interface StatisticsWebservice {
     /**
      * @GET declares an HTTP GET request
      */
@@ -18,5 +18,5 @@ interface CovidWebservices {
 
 
     @GET("statistics")
-    fun getStatistics(): LiveData<ApiResponse<Country>>
+    fun getStatistics(): LiveData<ApiResponse<Statistics>>
 }

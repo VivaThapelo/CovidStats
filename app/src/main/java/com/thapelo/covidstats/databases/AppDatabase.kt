@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.thapelo.covidstats.models.Country
+import com.thapelo.covidstats.models.Statistics
 
-@Database(entities = arrayOf(Country::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(Country::class, Statistics::class), version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 internal abstract class AppDatabase : RoomDatabase() {
     abstract fun countryDao(): CountryDao

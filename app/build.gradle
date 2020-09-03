@@ -1,9 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions { jvmTarget = "1.8" }
 
     defaultConfig {
         applicationId "com.thapelo.covidstats"
@@ -32,7 +40,19 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+    implementation "androidx.room:room-runtime:2.2.5"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "androidx.room:room-ktx:2.2.5"
+    implementation 'com.github.ajalt:timberkt:1.5.1'
+    implementation "com.github.leonardoxh:retrofit2-livedata-adapter:1.1.2"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    kapt "androidx.room:room-compiler:2.2.5"
+    kapt 'com.android.databinding:compiler:3.1.4'
+    implementation 'com.google.dagger:dagger:2.28.3'
+    kapt 'com.google.dagger:dagger-compiler:2.28.3'
     testImplementation 'junit:junit:4.12'
+    testImplementation "androidx.room:room-testing:2.2.5"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 

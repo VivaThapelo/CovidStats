@@ -16,6 +16,8 @@
         android:background="@drawable/autocomplete_background"
         android:hint="@string/autocomplete_hint"
         android:labelFor="@string/autocomplete_label"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp" />
 
